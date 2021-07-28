@@ -1,0 +1,44 @@
+﻿@model Employee
+@{ Layout = "_Layout"; ViewBag.Title = "Add a Employee";}
+
+<h2>Add a Reservation <a asp-action="Index" class="btn btn-sm btn-secondary">Back</a></h2>
+<form asp-action="AddEmployee" method="post">
+	<div class="form-group">
+		<label for="Name">Name:</label>
+		<input class="form-control" name="Name" />
+	</div>
+	<div class="form-group">
+		<label for="Department">Department:</label>
+		<input class="form-control" name="Department" />
+	</div>
+	<div class="form-group">
+		<label for="Salary">Salary:</label>
+		<input class="form-control" name="Salary" />
+	</div>
+	<div class="text-center panel-body">
+		<button type="submit" class="btn btn-sm btn-primary">Add</button>
+	</div>
+</form>
+
+@if (Model != null)
+{
+	<h2>Employee</h2>
+	<table class="table table-sm table-striped table-bordered m-2">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Department</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>@Model.Id</td>
+				<td>@Model.Name</td>
+				<td>@Model.Department</td>
+				<td>@Model.Salary</td>
+			</tr>
+		</tbody>
+	</table>
+}
